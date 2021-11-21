@@ -50,7 +50,7 @@ const Screens = ({navigation, style}) => {
                     headerTitle: null,
                     headerLeft: () => (
                         <TouchableOpacity onPress={navigation.openDrawer} >
-                            <Image source={isDrawerOpen ? require('../res/close.png') : require('../res/menu.png')} style={styles.menu} />
+                            <Image source={isDrawerOpen ? require('../res/left-arrow.png') : require('../res/menu.png')} style={styles.menu} />
                         </TouchableOpacity>
                     ),
                 }}
@@ -94,7 +94,6 @@ export default () => {
             sceneContainerStyle={styles.scene}
             drawerContent={(props) => {
                 setProgress(props.progress)
-                console.log('PROPS ' + props.progress)
                 return <DrawerContent {...props} />
             }}
         >
@@ -138,14 +137,15 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
     },
     menu: {
-        width: 28,
-        height: 28,
-        margin: 20,
+        width: 38,
+        height: 38,
+        marginHorizontal: 20,
+        marginTop: 30,
         tintColor: '#fff',
         resizeMode: 'contain'
     },
     drawerLblStyle: {
-        fontWeight: '600',
+        fontWeight: '700',
         fontSize: 20,
         color: '#fff'
     },
